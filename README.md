@@ -107,12 +107,14 @@ IEEE 国际电路与系统研讨会（ISCAS 2026，上海）提出 **"韬定律"
   - 出处：*Science China Information Sciences*, Vol. 69, No. 8, 183401 (2026)
   - DOI：https://doi.org/10.1007/s11432-026-5028-5
 - `He_2026_tau_scaling.txt` — 上述论文提取出的纯文本（可全文搜索）
+- `He_2026_时间缩微理论_中文.md` — 上述论文的**中文全文翻译**
 - `He_2026_Huawei_tau_chip_melt_arXiv2609.04287.pdf` — **何庭波第二篇论文 PDF**
   《Huawei's τ Chip Was Supposed to Melt?》（7 页，2 图，8 参考文献）
   - 出处：arXiv:2609.04287 (cs.AR)，提交于 2026-09-03
   - 主题：回应 τ 缩放定律最尖锐的质疑——**散热（热问题）**；用麒麟实测数据论证
     "芯片上真正消耗能量的是数据移动（通勤），而非计算本身（办公）"
 - `He_2026_tau_chip_melt.txt` — 上述第二篇论文提取出的纯文本
+- `He_2026_τ芯片散热_中文.md` — 上述第二篇论文的**中文全文翻译**
 - `WIRED_Huawei_Chip_Queen_2026-05-27.md` — WIRED 报道《Huawei's 'Chip Queen' Throws
   Down the Gauntlet》（Will Knight，2026-05-27，英文全文）
 - `中国经济网_韬定律_2026-05-27.md` — 中国青年报《"韬定律"：在时间的缝隙里突围》（中文全文）
