@@ -90,11 +90,22 @@ IEEE 国际电路与系统研讨会（ISCAS 2026，上海）提出 **"韬定律"
 
 相关材料位于 `tau_law/` 目录：
 
+- `He_2026_A_time_scaling_theory_for_multi-layer_electronic_systems.pdf` — **何庭波署名论文
+  原文 PDF**《A time scaling theory for multi-layer electronic systems》（开放获取，CC BY 4.0）
+  - 出处：*Science China Information Sciences*, Vol. 69, No. 8, 183401 (2026)
+  - DOI：https://doi.org/10.1007/s11432-026-5028-5
+- `He_2026_tau_scaling.txt` — 上述论文提取出的纯文本（可全文搜索）
 - `WIRED_Huawei_Chip_Queen_2026-05-27.md` — WIRED 报道《Huawei's 'Chip Queen' Throws
   Down the Gauntlet》（Will Knight，2026-05-27，英文全文）
-- `中国经济网_韬定律_2026-05-27.md` — 中国青年报《"韬定律"：在时间的缝隙里突围》
-  （详细转述何庭波署名论文《多层电子系统的时间缩微理论》的核心内容，中文全文）
+- `中国经济网_韬定律_2026-05-27.md` — 中国青年报《"韬定律"：在时间的缝隙里突围》（中文全文）
 
-> 说明：何庭波署名论文《多层电子系统的时间缩微理论》目前**未找到公开的 PDF 原文**，
-> 其核心观点与数据（"时间缩微"、逻辑折叠、381 款芯片量产、2026 款麒麟晶体管密度单代
-> 涨 55%、能效提升 41%、2031 年达 1.4nm 同等密度等）以上述两篇报道为准。
+论文核心内容（8 章）：
+
+1. Introduction — 引言
+2. The end of the geometric era — 几何缩微时代的终结
+3. Time, not space: the real currency of Moore's era — 时间而非空间，才是摩尔时代真正的"货币"
+4. LogicFolding: a mobile-SoC proof point — 逻辑折叠：移动 SoC 的实证（55% 密度提升、41% 功耗降低）
+5. From picoseconds to microseconds: τ scaling in the AI data center — 从皮秒到微秒：AI 数据中心的 τ 缩放
+6. Logic and memory: from decoupling to re-fusion — 逻辑与存储：从解耦到再融合
+7. Open challenges — 开放挑战
+8. Six years in, ten years out — 六年回顾、十年展望
