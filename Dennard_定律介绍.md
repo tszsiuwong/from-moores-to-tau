@@ -10,7 +10,8 @@
 > IEEE Journal of Solid-State Circuits, Vol. 9, No. 5, pp. 256–268, Oct. 1974.
 > DOI: 10.1109/JSSC.1974.1050511
 
-> 说明：该论文为 IEEE 版权、非开放获取，需通过 IEEE Xplore 订阅获取，此处未收录 PDF。
+> 该论文原文 PDF 已收录于本仓库 `dennard/` 目录（`Dennard_1974_ion-implanted_MOSFET.pdf`，13 页）。
+> 论文为 IEEE 版权，如需合法获取请通过 IEEE Xplore 订阅。
 
 ## 核心内容
 

@@ -60,6 +60,18 @@
 - Intel 官方"摩尔定律"博物馆页：https://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html
 - 1975 年论文（IEEE Xplore）：https://doi.org/10.1109/IEDM.1975.188490
 
+## Dennard 缩放定律（1974）
+
+摩尔定律说"密度翻倍"，但没说"缩小了功耗怎么办"。IBM 的 **Robert Dennard** 1974 年
+在论文 *Design of ion-implanted MOSFET's with very small physical dimensions* 中回答
+了这个问题：把晶体管所有尺寸与电压按同一比例缩小，就能同时得到密度翻倍、速度提升，
+而**单位面积功耗密度保持不变**——这就是半导体黄金时代（约 1974–2005）"免费午餐"的物理基础。
+
+该定律约在 2005 年因漏电问题失效（"Dennard 缩放失效"），CPU 频率随之封顶。
+
+- `dennard/Dennard_1974_ion-implanted_MOSFET.pdf` — 原始论文 PDF（13 页）
+- `Dennard_定律介绍.md` — 中文介绍（缩放规则、免费午餐、失效原因、与摩尔定律的关系）
+
 ## Carver Mead 与现代 VLSI 设计方法
 
 "摩尔定律"这一名称正是加州理工教授 **Carver Mead** 命名的。他同时也是**现代集成电路
