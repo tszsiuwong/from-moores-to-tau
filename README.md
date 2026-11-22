@@ -1,142 +1,140 @@
-# 摩尔定律（Moore's Law）相关资料
+# From Moore's to Tau：从摩尔定律到韬定律
 
-## 原文出处
+一份关于**半导体"缩放定律"演进史**的资料库：从戈登·摩尔 1965 年的预言，到 Dennard
+的缩放规则、Mead–Conway 的设计方法革命，再到 2026 年何庭波提出的"韬定律"（τ 缩放）。
 
-摩尔定律的"原文"是戈登·摩尔（Gordon E. Moore）1965 年 4 月 19 日发表在行业杂志
-《Electronics》（第 114–117 页）上的论文：
+主线逻辑：**每当"空间缩放"走到尽头，人类就转向新的度量——从密度，到设计抽象，再到时间本身。**
 
-> **Cramming More Components onto Integrated Circuits**
-> （把更多元件塞进集成电路）
+---
 
-本目录已下载该论文的全文（IEEE 1998 年重印版，含图注）与提取出的纯文本：
+## 时间线总览
 
-- `moore_1965.pdf` — 论文扫描/重印版 PDF
-- `moore_1965.txt` — 提取出的纯文本（可全文搜索）
+| 年份 | 事件 | 本质 |
+|------|------|------|
+| 1965 | 摩尔提出密度翻倍预测 | 观察：芯片会变得多快？ |
+| 1974 | Dennard 缩放定律 | 物理规则：缩小了功耗怎么办？ |
+| 1980 | Mead–Conway VLSI 方法学 | 工程方法：如何设计出越来越复杂的芯片？ |
+| 2005 | Dennard 缩放失效 | "免费午餐"结束 |
+| 2026 | 何庭波提出韬定律（τ 缩放） | 新度量：以"时间"替代"空间" |
 
-## 关键原文摘录
+---
 
-关于翻倍速率的预测（论文第四节 "COSTS AND CURVES"）：
+## 一、摩尔定律（1965）
 
-> "The complexity for minimum component costs has increased at a rate of
-> roughly a factor of two per year... Certainly over the short term this rate
-> can be expected to continue, if not to increase. Over the longer term, the
-> rate of increase is a bit more uncertain, although there is no reason to
-> believe it will not remain nearly constant for at least 10 years. That means
-> by 1975, the number of components per integrated circuit for minimum cost
-> will be 65,000."
->
-> （最低成本的复杂度大约以每年翻一番的速率增长……短期内这一速率将持续甚至加快；
-> 长期看虽有不确定性，但没有理由认为它不会在至少 10 年内保持恒定。这意味着到 1975 年，
-> 每个集成电路最低成本下的元件数将达到 6.5 万个。）
+戈登·摩尔 1965 年 4 月 19 日发表在《Electronics》杂志的论文
+《Cramming More Components onto Integrated Circuits》（把更多元件塞进集成电路）。
 
-关于应用前景的预言（论文开头）：
+- `moore_1965.pdf` — 原始论文 PDF（IEEE 重印版，4 页）
+- `moore_1965.txt` — 提取出的纯文本
+- `moore_1965_zh.md` — 中文全文翻译
 
-> "Integrated circuits will lead to such wonders as home computers—or at least
-> terminals connected to a central computer—automatic controls for automobiles,
-> and personal portable communications equipment."
->
-> （集成电路将带来家用计算机——或至少是连接到中央计算机的终端——汽车自动控制、
-> 以及个人便携式通信设备等奇迹。）
+**关键预测**：最低成本下的复杂度约每年翻一番，到 1975 年每个集成电路达 6.5 万个元件。
 
-## 常见误解澄清
+**三点澄清**：① "摩尔定律"一词摩尔本人从未使用，是 Carver Mead 在 1970 年代命名；②
+原始预测是"每年翻番"，1975 年摩尔修正为"每两年翻番"；③ 摩尔说的是"元件数"，非狭义
+的"晶体管数"。
 
-1. **摩尔本人当年并未使用"摩尔定律"（Moore's Law）这个词**。该名称是
-   加州理工教授 Carver Mead 在 1970 年代后期命名的。
-2. **原始预测是"每年翻番"**（1965 年）。1975 年摩尔在第二篇论文中将其修正为
-   "每两年翻一番"。
-3. 摩尔说的是"元件数（components）"，不是狭义的"晶体管数"，虽然实践中常以
-   晶体管数衡量。
+**1975 年修正论文**：*Progress in Digital Integrated Electronics*（IEDM 1975，
+DOI 10.1109/IEDM.1975.188490，IEEE 付费，未收录）。
 
-## 摩尔 1975 年修正论文
+---
 
-- 标题：**Progress in Digital Integrated Electronics**（数字集成电路的进展）
-- 出处：1975 年 IEEE 国际电子器件会议（IEDM）技术文摘，第 11–13 页
-- DOI：10.1109/IEDM.1975.188490（IEEE Xplore，付费）
-- 内容：将翻倍周期从 1 年修正为约 2 年，并分析了促成该趋势的技术经济因素。
+## 二、Dennard 缩放定律（1974）
 
-## 参考链接
-
-- 原始论文 PDF（UT Austin 课程镜像）：https://www.cs.utexas.edu/~fussell/courses/cs352h/papers/moore.pdf
-- Intel 官方"摩尔定律"博物馆页：https://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html
-- 1975 年论文（IEEE Xplore）：https://doi.org/10.1109/IEDM.1975.188490
-
-## Dennard 缩放定律（1974）
-
-摩尔定律说"密度翻倍"，但没说"缩小了功耗怎么办"。IBM 的 **Robert Dennard** 1974 年
-在论文 *Design of ion-implanted MOSFET's with very small physical dimensions* 中回答
-了这个问题：把晶体管所有尺寸与电压按同一比例缩小，就能同时得到密度翻倍、速度提升，
-而**单位面积功耗密度保持不变**——这就是半导体黄金时代（约 1974–2005）"免费午餐"的物理基础。
-
-该定律约在 2005 年因漏电问题失效（"Dennard 缩放失效"），CPU 频率随之封顶。
+摩尔定律说"密度翻倍"，但没说"缩小了功耗怎么办"。IBM 的 **Robert Dennard** 1974 年在
+论文 *Design of ion-implanted MOSFET's with very small physical dimensions* 中回答：
+把晶体管所有尺寸与电压按同一比例缩小，就能同时得到密度翻倍、速度提升，而**单位面积功耗
+密度保持不变**——这就是半导体黄金时代（约 1974–2005）"免费午餐"的物理基础。约 2005 年
+因漏电失效，CPU 频率随之封顶。
 
 - `dennard/Dennard_1974_ion-implanted_MOSFET.pdf` — 原始论文 PDF（13 页）
-- `Dennard_定律介绍.md` — 中文介绍（缩放规则、免费午餐、失效原因、与摩尔定律的关系）
+- `Dennard_定律介绍.md` — 中文介绍（缩放规则、免费午餐、失效、与摩尔定律的关系）
 
-## Carver Mead 与现代 VLSI 设计方法
+---
 
-"摩尔定律"这一名称正是加州理工教授 **Carver Mead** 命名的。他同时也是**现代集成电路
-（VLSI）设计方法学**的奠基人，与 Lynn Conway 合著的《Introduction to VLSI Systems》
-（1980，Addison-Wesley）一书引发了著名的 "Mead–Conway VLSI 设计革命"。
+## 三、Carver Mead 与现代 VLSI 设计方法（1980）
 
-该书把芯片设计从底层制造工艺中抽象出来，建立了可扩展的设计规则（λ 规则）、层次化
-设计、结构化设计与时序设计等方法，使得普通计算机科学家（而不仅是器件物理学家）也能
-设计大规模芯片——这正是今天所有现代芯片设计流程的源头。
+"摩尔定律"这一名称正是加州理工教授 **Carver Mead** 命名的。他与 Lynn Conway 合著的
+《Introduction to VLSI Systems》（1980）引发了 **Mead–Conway VLSI 设计革命**：把芯片
+设计从底层工艺中抽象出来（λ 规则、层次化/结构化设计），让普通计算机科学家也能设计大规模
+芯片——现代芯片设计流程的源头。
 
-已下载的资料位于 `mead_conway_vlsi/` 目录：
+- `Carver_Mead_介绍.md` — Carver Mead 工作全貌的中文介绍
 
-- `V1.pdf` — 第一卷（系统设计）
+### 教材与文献（`mead_conway_vlsi/`）
+
+- `V1.pdf` — 《Introduction to VLSI Systems》第一卷（系统设计）
 - `V2.pdf` — 第二卷（电路设计）
 - `V3.one-sided.pdf` — 第三卷（器件与物理，单面版）
-- `The_Design_of_VLSI_Design_Methods.pdf` — Lynn Conway 论文《The Design of VLSI
-  Design Methods》（ESSCIRC 1982，讲述 VLSI 设计方法本身的设计）
+- `The_Design_of_VLSI_Design_Methods.pdf` — Conway《The Design of VLSI Design Methods》（ESSCIRC 1982）
 
-> 来源：Lynn Conway 官网免费提供的 VLSI 教材与文献镜像。
-> 说明：以上为 Mead & Conway 三卷本全书的扫描/重排版，英文原文，未做翻译。
-
-### MPC：多项目晶圆（Mead–Conway 革命的"民主化"基石）
+### MPC：多项目晶圆（"民主化"基石）
 
 Mead–Conway 革命之所以是"革命"而非一家公司的内部成果，关键在于 **MPC（Multi-Project
-Chip，多项目晶圆）**——把多个设计拼到同一片晶圆上流片、共同分摊成本，让大学和学生也能
-负担得起真实的芯片制造。详见 `MPC_多项目晶圆_介绍.md`，历史文献收录于 `mpc/` 目录：
+Chip）**——把多个设计拼到同一片晶圆流片、分摊成本，让大学和学生也负担得起真实流片。
 
-- `MIT78.pdf` — MIT 1978 年 VLSI 课程档案（MPC 的源头）
-- `ImpDoc79.pdf` — MPC79 实施文档
-- `MPC79ChipPhotos.pdf` — MPC79 芯片照片
-- `MPCAdv.pdf` — MPC 的后续推进/宣传文档
+- `MPC_多项目晶圆_介绍.md` — 中文介绍
+- `mpc/MIT78.pdf` — MIT 1978 年 VLSI 课程档案（MPC 源头）
+- `mpc/ImpDoc79.pdf` — MPC79 实施文档
+- `mpc/MPC79ChipPhotos.pdf` — MPC79 芯片照片
+- `mpc/MPCAdv.pdf` — MPC 后续推进文档
 
-## 何庭波与"韬定律"（τ 定律 / Tau Scaling Law）
+> 来源：Lynn Conway 官网免费提供的 VLSI 教材与历史档案，英文原文，未做翻译。
+
+---
+
+## 四、何庭波与"韬定律"（τ 定律 / Tau Scaling Law，2026）
 
 2026 年 5 月 25 日，华为董事、半导体业务部（海思）总裁 **何庭波**（Tingbo He）在
-IEEE 国际电路与系统研讨会（ISCAS 2026，上海）提出 **"韬定律"（τ 定律，Tau Scaling Law）**，
-主张以"时间缩微"替代"几何缩微"作为半导体演进的新指导原则——通过逻辑折叠（LogicFolding）
-等创新，压缩信号传播时延（τ，时间常数），跨越单芯片几何缩放的物理极限。
+IEEE 国际电路与系统研讨会（ISCAS 2026，上海）提出 **"韬定律"（τ 缩放）**：主张以
+"时间缩微"替代"几何缩微"，通过逻辑折叠（LogicFolding）等创新压缩信号传播时延（τ，
+时间常数），跨越单芯片几何缩放的物理极限。
 
-相关材料位于 `tau_law/` 目录：
+### 论文①（理论，开放获取）
 
-- `He_2026_A_time_scaling_theory_for_multi-layer_electronic_systems.pdf` — **何庭波署名论文
-  原文 PDF**《A time scaling theory for multi-layer electronic systems》（开放获取，CC BY 4.0）
-  - 出处：*Science China Information Sciences*, Vol. 69, No. 8, 183401 (2026)
-  - DOI：https://doi.org/10.1007/s11432-026-5028-5
-- `He_2026_tau_scaling.txt` — 上述论文提取出的纯文本（可全文搜索）
-- `He_2026_时间缩微理论_中文.md` — 上述论文的**中文全文翻译**
-- `He_2026_Huawei_tau_chip_melt_arXiv2609.04287.pdf` — **何庭波第二篇论文 PDF**
-  《Huawei's τ Chip Was Supposed to Melt?》（7 页，2 图，8 参考文献）
-  - 出处：arXiv:2609.04287 (cs.AR)，提交于 2026-09-03
-  - 主题：回应 τ 缩放定律最尖锐的质疑——**散热（热问题）**；用麒麟实测数据论证
-    "芯片上真正消耗能量的是数据移动（通勤），而非计算本身（办公）"
-- `He_2026_tau_chip_melt.txt` — 上述第二篇论文提取出的纯文本
-- `He_2026_τ芯片散热_中文.md` — 上述第二篇论文的**中文全文翻译**
-- `WIRED_Huawei_Chip_Queen_2026-05-27.md` — WIRED 报道《Huawei's 'Chip Queen' Throws
-  Down the Gauntlet》（Will Knight，2026-05-27，英文全文）
-- `中国经济网_韬定律_2026-05-27.md` — 中国青年报《"韬定律"：在时间的缝隙里突围》（中文全文）
+- `tau_law/He_2026_A_time_scaling_theory_for_multi-layer_electronic_systems.pdf` — 原文 PDF
+  （*Science China Information Sciences*, Vol. 69, No. 8, 183401, 2026；DOI 10.1007/s11432-026-5028-5）
+- `tau_law/He_2026_tau_scaling.txt` — 提取的纯文本
+- `tau_law/He_2026_时间缩微理论_中文.md` — 中文全文翻译
 
-论文核心内容（8 章）：
+**八章结构**：引言 → 几何时代终结 → 时间而非空间 → 逻辑折叠实证 → AI 数据中心的 τ 缩放
+→ 逻辑与存储再融合 → 开放挑战 → 六年回顾十年展望。
 
-1. Introduction — 引言
-2. The end of the geometric era — 几何缩微时代的终结
-3. Time, not space: the real currency of Moore's era — 时间而非空间，才是摩尔时代真正的"货币"
-4. LogicFolding: a mobile-SoC proof point — 逻辑折叠：移动 SoC 的实证（55% 密度提升、41% 功耗降低）
-5. From picoseconds to microseconds: τ scaling in the AI data center — 从皮秒到微秒：AI 数据中心的 τ 缩放
-6. Logic and memory: from decoupling to re-fusion — 逻辑与存储：从解耦到再融合
-7. Open challenges — 开放挑战
-8. Six years in, ten years out — 六年回顾、十年展望
+### 论文②（散热回应）
+
+- `tau_law/He_2026_Huawei_tau_chip_melt_arXiv2609.04287.pdf` — 原文 PDF（arXiv:2609.04287, 7 页）
+- `tau_law/He_2026_tau_chip_melt.txt` — 提取的纯文本
+- `tau_law/He_2026_τ芯片散热_中文.md` — 中文全文翻译
+
+核心是"通勤"比喻：芯片上真正耗能的是数据移动（通勤）而非计算（办公），逻辑折叠缩短了
+"通勤"距离，所以更密的芯片反而更凉。
+
+### 报道
+
+- `tau_law/WIRED_Huawei_Chip_Queen_2026-05-27.md` — WIRED 报道（Will Knight，英文）
+- `tau_law/中国经济网_韬定律_2026-05-27.md` — 中国青年报报道（中文）
+
+---
+
+## 五、延伸思考
+
+- `韬定律与新Mead-Conway革命.md` — 韬定律下，是否会出现新的 Mead–Conway 式设计革命？
+  结论：技术前提已具备，但"开放、教学、可复制"的社会前提尚未出现。
+
+---
+
+## 目录结构
+
+```
+.
+├── README.md                              # 本文件
+├── moore_1965.pdf / .txt / _zh.md         # 摩尔定律原文 + 文本 + 中文翻译
+├── Dennard_定律介绍.md                     # Dennard 定律中文介绍
+├── dennard/Dennard_1974_....pdf           # Dennard 1974 原始论文
+├── Carver_Mead_介绍.md                     # Carver Mead 工作中文介绍
+├── mead_conway_vlsi/                       # Mead–Conway VLSI 教材与论文
+├── MPC_多项目晶圆_介绍.md                  # MPC 中文介绍
+├── mpc/                                    # MPC 历史文献（Lynn Conway 档案）
+├── 韬定律与新Mead-Conway革命.md             # 延伸思考
+└── tau_law/                                # 何庭波韬定律两篇论文 + 翻译 + 报道
+```
