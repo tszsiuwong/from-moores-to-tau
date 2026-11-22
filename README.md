@@ -93,6 +93,17 @@
 > 来源：Lynn Conway 官网免费提供的 VLSI 教材与文献镜像。
 > 说明：以上为 Mead & Conway 三卷本全书的扫描/重排版，英文原文，未做翻译。
 
+### MPC：多项目晶圆（Mead–Conway 革命的"民主化"基石）
+
+Mead–Conway 革命之所以是"革命"而非一家公司的内部成果，关键在于 **MPC（Multi-Project
+Chip，多项目晶圆）**——把多个设计拼到同一片晶圆上流片、共同分摊成本，让大学和学生也能
+负担得起真实的芯片制造。详见 `MPC_多项目晶圆_介绍.md`，历史文献收录于 `mpc/` 目录：
+
+- `MIT78.pdf` — MIT 1978 年 VLSI 课程档案（MPC 的源头）
+- `ImpDoc79.pdf` — MPC79 实施文档
+- `MPC79ChipPhotos.pdf` — MPC79 芯片照片
+- `MPCAdv.pdf` — MPC 的后续推进/宣传文档
+
 ## 何庭波与"韬定律"（τ 定律 / Tau Scaling Law）
 
 2026 年 5 月 25 日，华为董事、半导体业务部（海思）总裁 **何庭波**（Tingbo He）在
