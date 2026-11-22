@@ -15,7 +15,6 @@
     --accent: #4da3ff;
     --accent2: #7c5cff;
     --gold: #ffb84d;
-    --green: #4dd0a0;
     --red: #ff6b6b;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,18 +39,8 @@
     margin-bottom: 16px;
   }
   header .sub { color: var(--muted); font-size: 1rem; max-width: 620px; margin: 0 auto; }
-  header .core {
-    margin: 22px auto 0;
-    max-width: 640px;
-    padding: 16px 20px;
-    background: rgba(255,184,77,.06);
-    border: 1px solid rgba(255,184,77,.25);
-    border-radius: 12px;
-    font-size: .95rem;
-    color: var(--gold);
-  }
 
-  .timeline { position: relative; padding-left: 44px; margin-top: 12px; }
+  .timeline { position: relative; padding-left: 44px; margin-top: 24px; }
   .timeline::before {
     content: "";
     position: absolute;
@@ -84,14 +73,10 @@
     background: rgba(77,163,255,.12);
     padding: 2px 10px; border-radius: 20px; margin-bottom: 8px;
   }
-  .card h2 { font-size: 1.12rem; margin-bottom: 4px; }
-  .card .first {
-    font-size: .85rem; color: var(--green); font-weight: 600; margin-bottom: 10px;
-  }
+  .card h2 { font-size: 1.12rem; margin-bottom: 6px; }
   .card p { font-size: .92rem; }
 
   footer { margin-top: 48px; text-align: center; color: var(--muted); font-size: .88rem; }
-  footer .sum { max-width: 640px; margin: 0 auto 12px; color: var(--text); }
   footer a { color: var(--accent); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
 </style>
@@ -101,8 +86,7 @@
 
   <header>
     <h1>回归第一性原理：从摩尔定律到韬定律</h1>
-    <p class="sub">半导体行业六十年，表面是无数的技术、公司与节点；回到第一性原理，它其实一直在回答同一个问题。</p>
-    <div class="core">「进步」的本质，到底是什么？——每一次回答被推到更根本的层次，就诞生一条新的"定律"。</div>
+    <p class="sub">半导体"缩放"这条路走了六十年——从 1965 年的摩尔定律，到 2026 年的韬定律。</p>
   </header>
 
   <div class="timeline">
@@ -112,8 +96,8 @@
       <div class="card">
         <span class="year">1965</span>
         <h2>摩尔定律</h2>
-        <div class="first">第一性量 · 面积 / 密度</div>
-        <p>进步 = 单位面积能塞下多少元件。这是关于"空间"的答案，但摩尔没有回答：缩小了之后，能量怎么办？</p>
+        <p>戈登·摩尔预言：集成电路上的元件数约每两年翻一番。它是一个经验观察 + 行业契约，
+        给整个计算栈立了一个"节拍器"。</p>
       </div>
     </div>
 
@@ -122,8 +106,8 @@
       <div class="card">
         <span class="year">1974</span>
         <h2>Dennard 缩放定律</h2>
-        <div class="first">第一性量 · 能量</div>
-        <p>回到更底层：缩小晶体管时，能量这个守恒量会怎样？证明等比缩小尺寸 + 电压，单位面积功耗密度不变——"免费午餐"的物理本质。</p>
+        <p>把晶体管所有尺寸与电压按同一比例缩小，就能同时得到密度翻倍、速度提升，而单位面积
+        功耗密度保持不变——这是"免费午餐"的物理基础。</p>
       </div>
     </div>
 
@@ -132,8 +116,8 @@
       <div class="card">
         <span class="year">1980</span>
         <h2>Mead–Conway VLSI 方法学</h2>
-        <div class="first">第一性量 · 抽象</div>
-        <p>就算物理上能缩，人怎么设计得出这么复杂的芯片？答案是"抽象"——用 λ 规则把设计从工艺里解耦。</p>
+        <p>把芯片设计从底层工艺中抽象出来：λ 设计规则、层次化、结构化设计。让普通计算机科学家
+        也能设计大规模芯片。</p>
       </div>
     </div>
 
@@ -142,8 +126,8 @@
       <div class="card">
         <span class="year">1980s–</span>
         <h2>EDA：电子设计自动化</h2>
-        <div class="first">第一性量 · 自动化</div>
-        <p>抽象要落地，还得靠工具。Synopsys、Cadence 把方法学写成工具链，逻辑综合让"RTL → 门级网表"自动化。</p>
+        <p>Synopsys、Cadence 等把 Mead–Conway 的方法学写成工具链：逻辑综合、布局布线、验证。
+        逻辑综合让"RTL → 门级网表"自动化。</p>
       </div>
     </div>
 
@@ -151,9 +135,8 @@
       <span class="dot"></span>
       <div class="card">
         <span class="year">2005</span>
-        <h2>多核转向</h2>
-        <div class="first">第一性量 · 并行</div>
-        <p>Dennard 失效，频率封顶。"缩小空间"走到尽头，行业先转向"并行"——进步的度量从 GHz 变成核心数。</p>
+        <h2>Dennard 失效 → 多核转向</h2>
+        <p>电压降不下去、漏电暴增，单核频率在 ~3.8GHz 撞功耗墙。行业从"提频"转向"堆核"。</p>
       </div>
     </div>
 
@@ -162,8 +145,8 @@
       <div class="card">
         <span class="year">2010s–</span>
         <h2>先进封装 / Chiplet</h2>
-        <div class="first">第一性量 · 系统集成</div>
-        <p>不再缩小，改拼装——2.5D、HBM、3D 混合键合。性能提升来自更聪明的系统级集成，而非更小的晶体管。</p>
+        <p>不再缩小，改拼装——2.5D 封装、HBM、Chiplet、3D 混合键合堆叠。性能提升来自更聪明的
+        系统级集成，而非更小的晶体管。</p>
       </div>
     </div>
 
@@ -172,15 +155,14 @@
       <div class="card">
         <span class="year">2026</span>
         <h2>韬定律（τ 缩放）</h2>
-        <div class="first">第一性量 · 时间</div>
-        <p>何庭波回到最根本的那个量：进步的本质，从来都是"时间"（延迟），空间只是手段。以"时间缩微"替代"几何缩微"。</p>
+        <p>何庭波提出以"时间缩微"替代"几何缩微"，通过逻辑折叠压缩信号传播时延 τ。这是把
+        "进步"的度量从空间推到了时间。</p>
       </div>
     </div>
 
   </div>
 
   <footer>
-    <p class="sum">从面积，到能量，到抽象，最终到时间——每一次追问，都让人类离"进步的第一性原理"更近一步。</p>
     <p>完整资料见仓库 README · <a href="https://github.com/tszsiuwong/from-moores-to-tau">github.com/tszsiuwong/from-moores-to-tau</a></p>
   </footer>
 
