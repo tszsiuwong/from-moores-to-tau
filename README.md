@@ -15,7 +15,7 @@
 | 1974 | Dennard 缩放定律 | 物理规则：缩小了功耗怎么办？ |
 | 1980 | Mead–Conway VLSI 方法学 | 工程方法：如何设计出越来越复杂的芯片？ |
 | 1980s– | EDA 兴起（Synopsys / Cadence） | 工具：把方法学变成软件 |
-| 2005 | Dennard 缩放失效 | "免费午餐"结束 |
+| 2005 | Dennard 缩放失效 → 多核转向 | "免费午餐"结束，从提频转向堆核 |
 | 2010s– | 先进封装 / Chiplet（More than Moore） | 应对：不缩小，改拼装 |
 | 2026 | 何庭波提出韬定律（τ 缩放） | 新度量：以"时间"替代"空间" |
 
@@ -51,6 +51,7 @@ DOI 10.1109/IEDM.1975.188490，IEEE 付费，未收录）。
 
 - [dennard/Dennard_1974_ion-implanted_MOSFET.pdf](dennard/Dennard_1974_ion-implanted_MOSFET.pdf) — 原始论文 PDF（13 页）
 - [Dennard_定律介绍.md](Dennard_定律介绍.md) — 中文介绍（缩放规则、免费午餐、失效、与摩尔定律的关系）
+- [多核转向_免费午餐的终结_介绍.md](多核转向_免费午餐的终结_介绍.md) — 2005 年 Dennard 失效的直接后果：单核频率撞功耗墙，行业从"提频"转向"堆核"
 
 ---
 
@@ -175,6 +176,7 @@ IEEE 国际电路与系统研讨会（ISCAS 2026，上海）提出 **"韬定律"
 ├── README.md                              # 本文件
 ├── moore_1965.pdf / .txt / _zh.md         # 摩尔定律原文 + 文本 + 中文翻译
 ├── Dennard_定律介绍.md                     # Dennard 定律中文介绍
+├── 多核转向_免费午餐的终结_介绍.md          # 2005 多核转向中文介绍
 ├── dennard/Dennard_1974_....pdf           # Dennard 1974 原始论文
 ├── Carver_Mead_介绍.md                     # Carver Mead 工作中文介绍
 ├── mead_conway_vlsi/                       # Mead–Conway VLSI 教材与论文
