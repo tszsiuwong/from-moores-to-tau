@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Moore's to Tau：从摩尔定律到韬定律</title>
+<style>
+  :root {
+    --bg: #0e1420;
+    --bg2: #141c2e;
+    --card: #1a2338;
+    --card-border: #2a3550;
+    --text: #d7deea;
+    --muted: #8a96ad;
+    --accent: #4da3ff;
+    --accent2: #7c5cff;
+    --gold: #ffb84d;
+    --green: #4dd0a0;
+    --red: #ff6b6b;
+    --line: #2e3a55;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0 16px 80px;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; }
+
+  header {
+    text-align: center;
+    padding: 64px 0 40px;
+  }
+  header h1 {
+    font-size: 2.1rem;
+    letter-spacing: .5px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+  }
+  header .sub {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  header .logic {
+    margin-top: 18px;
+    font-size: .95rem;
+    color: var(--gold);
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 44px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(var(--accent), var(--accent2), var(--gold));
+    opacity: .45;
+  }
+
+  .node { position: relative; margin-bottom: 28px; }
+  .node .dot {
+    position: absolute;
+    left: -36px;
+    top: 22px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(77,163,255,.15);
+  }
+  .node.warn .dot { background: var(--red); box-shadow: 0 0 0 4px rgba(255,107,107,.15); }
+  .node.gold .dot { background: var(--gold); box-shadow: 0 0 0 4px rgba(255,184,77,.15); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: border-color .2s, transform .2s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card .year {
+    display: inline-block;
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: rgba(77,163,255,.12);
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+  .card h2 { font-size: 1.12rem; margin-bottom: 4px; }
+  .card .role {
+    font-size: .85rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .card .role b { color: var(--green); font-weight: 600; }
+  .card p { font-size: .92rem; color: var(--text); }
+
+  footer {
+    margin-top: 48px;
+    text-align: center;
+    color: var(--muted);
+    font-size: .88rem;
+  }
+  footer .sum {
+    max-width: 620px;
+    margin: 0 auto 12px;
+    color: var(--text);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>From Moore's to Tau</h1>
+    <p class="sub">从摩尔定律到韬定律——一份关于半导体"缩放定律"演进史的可视化时间线。</p>
+    <p class="logic">主线逻辑：每当"空间缩放"走到尽头，人类就转向新的度量——<br>从密度，到设计抽象，再到时间本身。</p>
+  </header>
+
+  <div class="timeline">
+
+    <div class="node">
+      <span class="dot"></span>
+      <div class="card">
+        <span class="year">1965</span>
+        <h2>摩尔定律</h2>
+        <div class="role">本质：<b>观察</b>——芯片会变得多快？</div>
+        <p>戈登·摩尔预言：集成电路上的元件数约每两年翻一番。它是一个经验观察 + 行业契约，
+        给整个计算栈立了一个"节拍器"。</p>
+      </div>
+    </div>
+
+    <div class="node">
+      <span class="dot"></span>
+      <div class="card">
+        <span class="year">1974</span>
+        <h2>Dennard 缩放定律</h2>
+        <div class="role">本质：<b>物理规则</b>——缩小了功耗怎么办？</div>
+        <p>把晶体管所有尺寸与电压按同一比例缩小，就能同时得到密度翻倍、速度提升，而单位面积
+        功耗密度保持不变——这是"免费午餐"的物理基础。</p>
+      </div>
+    </div>
+
+    <div class="node">
+      <span class="dot"></span>
+      <div class="card">
+        <span class="year">1980</span>
+        <h2>Mead–Conway VLSI 方法学</h2>
+        <div class="role">本质：<b>工程方法</b>——如何设计出越来越复杂的芯片？</div>
+        <p>把芯片设计从底层工艺中抽象出来：λ 设计规则（所有尺寸表示为 λ 的整数倍）、层次化、
+        结构化设计。让普通计算机科学家也能设计大规模芯片。</p>
+      </div>
+    </div>
+
+    <div class="node">
+      <span class="dot"></span>
+      <div class="card">
+        <span class="year">1980s–</span>
+        <h2>EDA：电子设计自动化</h2>
+        <div class="role">本质：<b>工具</b>——把方法学变成软件。</div>
+        <p>Synopsys、Cadence 等把 Mead–Conway 的方法学写成工具链：逻辑综合、布局布线、验证。
+        逻辑综合（RTL → 门级网表）是层次化思想在软件上的革命性兑现。</p>
+      </div>
+    </div>
+
+    <div class="node warn">
+      <span class="dot"></span>
+      <div class="card">
+        <span class="year">2005</span>
+        <h2>Dennard 失效 → 多核转向</h2>
+        <div class="role">本质：<b>拐点</b>——"免费午餐"结束。</div>
+        <p>电压降不下去、漏电暴增，单核频率在 ~3.8GHz 撞功耗墙。行业从"提频"转向"堆核"，
+        进步的度量从"单核 GHz"变成"核心数 / 每瓦性能"。</p>
+      </div>
+    </div>
+
+    <div class="node">
+      <span class="dot"></span>
+      <div class="card">
+        <span class="year">2010s–</span>
+        <h2>先进封装 / Chiplet（More than Moore）</h2>
+        <div class="role">本质：<b>应对</b>——不缩小，改拼装。</div>
+        <p>2.5D 封装（CoWoS）、HBM、Chiplet、3D 混合键合堆叠。性能提升不再来自更小的晶体管，
+        而来自更聪明的系统级集成——这是韬定律的直接前奏。</p>
+      </div>
+    </div>
+
+    <div class="node gold">
+      <span class="dot"></span>
+      <div class="card">
+        <span class="year">2026</span>
+        <h2>韬定律（τ 缩放）</h2>
+        <div class="role">本质：<b>新度量</b>——以"时间"替代"空间"。</div>
+        <p>何庭波提出以"时间缩微"替代"几何缩微"，通过逻辑折叠（LogicFolding）压缩信号传播
+        时延 τ。但 τ 仍是跨 12 个数量级的分层向量，尚缺一个像 λ 那样可操作的"特征时间"。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="sum">摩尔负责预言，Dennard 负责规则，Mead–Conway 负责方法，EDA 负责落地；
+    当几何缩放走到尽头，韬定律试图以"时间"重新定义进步。</p>
+    <p>完整资料见仓库 README · <a href="https://github.com/tszsiuwong/from-moores-to-tau">github.com/tszsiuwong/from-moores-to-tau</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
