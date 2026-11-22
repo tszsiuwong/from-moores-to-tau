@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>韬定律的软肋：它还没有一个"特征时间 τ"</title>
+<style>
+  :root {
+    --bg: #0e1420;
+    --bg2: #141c2e;
+    --card: #1a2338;
+    --card-border: #2a3550;
+    --text: #d7deea;
+    --muted: #8a96ad;
+    --accent: #4da3ff;
+    --accent2: #7c5cff;
+    --gold: #ffb84d;
+    --green: #4dd0a0;
+    --red: #ff6b6b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 0 16px 80px;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; }
+
+  header { text-align: center; padding: 60px 0 36px; }
+  header h1 {
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 14px;
+  }
+  header .sub { color: var(--muted); font-size: .95rem; }
+
+  .quote {
+    border-left: 3px solid var(--gold);
+    background: rgba(255,184,77,.06);
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    margin: 28px 0;
+    font-size: .95rem;
+    color: var(--text);
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin: 40px 0 14px;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent);
+  }
+  h2 .n { color: var(--accent); margin-right: 6px; }
+  p { margin-bottom: 14px; font-size: .95rem; }
+  strong { color: #fff; }
+  .hl { color: var(--gold); font-weight: 600; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: .9rem;
+  }
+  th, td {
+    border: 1px solid var(--card-border);
+    padding: 9px 12px;
+    text-align: left;
+  }
+  th { background: rgba(77,163,255,.1); color: var(--accent); font-weight: 600; }
+  td:first-child { color: var(--gold); font-weight: 600; white-space: nowrap; }
+
+  .formula {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    background: #0d1320;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: .9rem;
+    color: var(--green);
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .verdict {
+    background: linear-gradient(135deg, rgba(77,163,255,.08), rgba(124,92,255,.08));
+    border: 1px solid var(--accent2);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin: 28px 0;
+  }
+  .verdict .label {
+    font-size: .8rem;
+    color: var(--accent2);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .verdict p { margin-bottom: 8px; font-size: .95rem; }
+
+  ul { margin: 0 0 14px 22px; }
+  li { margin-bottom: 8px; font-size: .95rem; }
+
+  footer {
+    margin-top: 48px;
+    text-align: center;
+    color: var(--muted);
+    font-size: .85rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>韬定律的软肋：它还没有一个"特征时间 τ"</h1>
+    <p class="sub">一个尖锐而准确的技术观察</p>
+  </header>
+
+  <div class="quote">
+    摩尔定律做"尺寸微缩"，Mead 用 λ 规则把"特征尺寸"抽象成可缩放参数；但何庭波的
+    "时间微缩"（τ 缩放），似乎<b>拿不出一个像 λ 那样的"特征时间 τ"来统一缩放</b>。
+  </div>
+
+  <h2><span class="n">一</span>λ 为什么能"微缩"：它是一个单一物理标量</h2>
+  <p>Mead 的 λ 规则之所以能成为设计方法学的基石，是因为 λ 满足三个条件：</p>
+  <ul>
+    <li><strong>单一</strong>：λ = 最小特征尺寸的一半，是一个明确的物理量；</li>
+    <li><strong>可测量</strong>：每代工艺的 λ 值清晰可知（0.18µm、90nm、7nm）；</li>
+    <li><strong>可缩放</strong>："微缩"有精确含义——把 λ 换成更小的数，所有版图尺寸（2λ、3λ……）随之等比缩放。</li>
+  </ul>
+  <p>更关键的是，λ 微缩背后有 <span class="hl">Dennard 定律</span>兜底：等比缩小尺寸 + 电压，
+  功耗密度不变。所以"缩 λ"有物理依据、有可预见的后果——这就是一条真正的"缩放定律"。</p>
+
+  <h2><span class="n">二</span>τ 为什么"难缩"：它不是标量，而是一族量</h2>
+  <p>何庭波的 τ 恰恰<b>不是一个量</b>。论文自己把它定义成一个分层结构：</p>
+  <div class="formula">τ = f(τ_transistor ; τ_circuit ; τ_chip ; τ_system)</div>
+  <p>这四个 τ 跨越 <span class="hl">12 个数量级</span>，且在每一层物理含义完全不同：</p>
+  <table>
+    <tr><th>层</th><th>τ 的含义</th><th>量级</th></tr>
+    <tr><td>晶体管</td><td>本征开关延迟</td><td>~ps</td></tr>
+    <tr><td>电路</td><td>RC 传播延迟</td><td>~ns</td></tr>
+    <tr><td>芯片</td><td>访存延迟</td><td>~ns–µs</td></tr>
+    <tr><td>系统</td><td>消息/同步延迟</td><td>~µs–s</td></tr>
+  </table>
+  <p>问题的根源就在这里：<strong>你没法像"把 λ 缩小一半"那样说"把 τ 缩小一半"</strong>——因为 τ 是四个完全不同性质的量，没有一个统一的"特征时间"可以被整体缩放。<span class="hl">λ 是一个标量，τ 是一个向量。</span></p>
+
+  <h2><span class="n">三</span>论文其实"露怯"了</h2>
+  <p>细读何庭波的论文，τ 的定义是<b>弱定义</b>，至少有三处证据：</p>
+  <ul>
+    <li><strong>缩放因子 α 不统一</strong>。代际规则 <code>τ_{n+1} = τ_n / α</code> 中的 α，
+      论文明确说"因应用而异"——移动设备 1.3、自动驾驶 1.5、AI 令牌生成高达 10。α 不统一，
+      恰恰说明 τ 不是同一个物理量。</li>
+    <li><strong>是"目标设定"而非"物理定律"</strong>。τ 缩放读起来更像"我们要把延迟压下去"，
+      而不是"延迟按某个物理规律必然缩放"。它缺少一条"τ 版的 Dennard 定律"。</li>
+    <li><strong>必须发明新基准</strong>。论文第 7 章提出要搞"τ 画像基准"。为什么要专门发明
+      新基准？因为<b>现在根本没有统一的 τ 度量</b>——λ 当年可不需要"发明基准"，它本身就是个
+      尺寸，拿尺子量就行。</li>
+  </ul>
+
+  <h2><span class="n">四</span>深层含义：韬定律连自己的"λ"都还没立起来</h2>
+  <p>这是一个比"社会前提缺失"更根本的问题。回顾主线：</p>
+  <ul>
+    <li><strong>摩尔定律</strong>给出的是观察（密度翻倍）；</li>
+    <li><strong>Dennard 定律</strong>给出的是物理规则（等比缩放，功耗密度不变）；</li>
+    <li><strong>Mead–Conway</strong>给出的是方法学（λ 规则），但 λ 之所以可操作，是因为它站在
+      Dennard 的物理基础之上。</li>
+  </ul>
+  <p>而韬定律目前的处境是：它给出了观察、也给出了方向，但<span class="hl">既没有"τ 版的
+  Dennard"（物理缩放规则），也没有"τ 版的 λ"（可操作的统一特征量）</span>。</p>
+  <div class="verdict">
+    <div class="label">结论</div>
+    <p>何庭波交出的 τ，目前更接近一个<b>口号式的统一度量</b>，还不是一个<b>可微缩的特征量</b>。</p>
+  </div>
+
+  <h2><span class="n">五</span>这补全了"新 Mead–Conway 革命"的技术论据</h2>
+  <p>之前的《韬定律与新 Mead–Conway 革命》从<b>社会层面</b>论证：韬定律缺"开放、教学、可复制"。
+  本文则从<b>技术层面</b>补上了更根本的一环：</p>
+  <div class="quote">
+    韬定律要成为真正的新范式，第一步不是开放工具链，而是<b>先把 τ 严格定义成一个像 λ 那样的、
+    可测量、可缩放的"特征时间"</b>——再为它找到一条"τ 版 Dennard 定律"。<br>
+    没有这个特征量，一切后续（方法学、EDA、MPC、基准）都建立在流沙之上。
+  </div>
+
+  <h2><span class="n">六</span>总结</h2>
+  <ul>
+    <li><strong>λ 微缩</strong>是"有物理基础的缩放规则"：单一标量 + Dennard 兜底。</li>
+    <li><strong>τ 微缩</strong>目前只是"一个优化目标/框架"：跨 12 个数量级的分层向量，缺统一定义、缺物理缩放规则。</li>
+  </ul>
+  <p>所以那个直觉是对的：<span class="hl">韬定律的"时间微缩"暂时还搞不出一个像 λ 那样的"特征时间 τ"</span>。
+  何庭波的价值在方向感——第一个认真把"时间"当作首要度量的人；但要把方向变成"定律"，还差一个
+  <strong>"τ 版的 Dennard"</strong>和一个<strong>"τ 版的 λ"</strong>。</p>
+
+  <footer>
+    <p>这，可能才是韬定律时代真正等的那个人（或那篇论文）要解决的第一道题。</p>
+    <p><a href="https://github.com/tszsiuwong/from-moores-to-tau">github.com/tszsiuwong/from-moores-to-tau</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
